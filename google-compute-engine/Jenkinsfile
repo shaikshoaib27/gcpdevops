@@ -53,7 +53,7 @@ pipeline {
   
     stage('App health check') {
 	 steps {
-
+            sh 'sleep 60'
 	    sh 'curl http://$(cat ip.txt)'
     
     }
