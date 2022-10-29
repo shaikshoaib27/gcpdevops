@@ -32,7 +32,7 @@ pipeline {
     }
 	}
  	 
-	stage('Create Instance') {
+	stage('Delete Instance') {
 	 steps {
     
     sh 'gcloud compute instances delete webhost3 --zone=us-central1-a'
