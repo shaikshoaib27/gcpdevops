@@ -30,6 +30,7 @@ pipeline {
         sh 'gcloud auth activate-service-account jenkins@mi-dev-lab.iam.gserviceaccount.com --key-file=jenkins.json'
     }
     }
+	}
  	 
 	stage('Create Instance') {
 	 steps {
@@ -58,4 +59,3 @@ pipeline {
     }
     }
    }
-}
