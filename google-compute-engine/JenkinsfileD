@@ -35,7 +35,7 @@ pipeline {
 	stage('Delete Instance') {
 	 steps {
     
-    sh 'gcloud compute instances delete $INSTANCE --zone=us-central1-a'
+    sh 'gcloud compute instances delete $INSTANCE --zone=$ZONES'
         
     }
     }    
