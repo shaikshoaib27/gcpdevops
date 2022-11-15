@@ -28,7 +28,7 @@ pipeline {
 		 {
        sh 'ls -ltr'
        sh 'pwd'
-       sh 'gcloud auth activate-service-account jenkins@mi-uat-lab.iam.gserviceaccount.com --key-file=jenkins.json'
+       sh 'gcloud auth activate-service-account jenkins@mi-uat-lab.iam.gserviceaccount.com --key-file=./google-compute-enginejenkins.json'
     }
     }
 	}		
@@ -37,7 +37,7 @@ pipeline {
 	 steps {
     
     sh 'gcloud compute instances create webhost3 --zone=us-central1-a --tags=http-server --metadata-from-file=startup-script=./google-compute-engine/startup-script.sh'
-        
+		 
     }
     }	 
 }
