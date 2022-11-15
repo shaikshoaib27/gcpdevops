@@ -8,7 +8,7 @@ pipeline {
     stages {
               stage ('checkout'){
             steps {
-                git branch: 'main', url: 'https://github.com/shaikshoaib27/gcpdevops.gitt'
+                git branch: 'main', url: 'https://github.com/shaikshoaib27/gcpdevops.git'
             }
         }
 		stage('Set creds') {
