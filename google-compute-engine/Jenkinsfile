@@ -29,7 +29,7 @@ pipeline {
 		 
        sh 'ls -ltr'
        sh 'pwd'	 
-       sh 'gcloud auth activate-service-account jenkins@mi-uat-lab.iam.gserviceaccount.com --KEY_FILE: $=jenkins.json'
+       sh 'gcloud auth activate-service-account jenkins@mi-uat-lab.iam.gserviceaccount.com --KEY_FILE=jenkins.json'
     }
     }
 	}		
