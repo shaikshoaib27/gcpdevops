@@ -33,7 +33,7 @@ pipeline {
  	 stage('Create Instance') {
 	 steps {
     
-    sh 'gcloud compute instances create $VM_NAME --zone=$ZONE --tags=http-server --metadata-from-file=startup-script=./google-compute-engine/startup-script.sh'
+    sh 'gcloud compute instances create pipeline-vm --zone=europe-west2-a --tags=http-server --metadata-from-file=startup-script=./google-compute-engine/startup-script.sh'
         
     }
     }	 
