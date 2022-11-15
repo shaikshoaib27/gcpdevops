@@ -24,7 +24,7 @@ pipeline {
 
 	stage('Auth-Project') {
 	 steps {
-		 dir('cd google-compute-engine')
+		 dir('google-compute-engine')
 		 {
 		 
        sh 'ls -ltr'
