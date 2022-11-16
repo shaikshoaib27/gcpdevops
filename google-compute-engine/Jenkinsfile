@@ -37,7 +37,7 @@ pipeline {
  	 stage('Create Instance') {
 	 steps {
     
-    sh 'gcloud compute instances create webhost3 --zone=us-central1-a --tags=http-server --metadata-from-file=startup-script=./google-compute-engine/startup-script.sh'
+    sh 'gcloud compute instances create webhost2 --zone=us-central1-a --tags=http-server --metadata-from-file=startup-script=./google-compute-engine/startup-script.sh'
 		 
     }
     }	 
