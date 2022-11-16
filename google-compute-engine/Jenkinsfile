@@ -25,13 +25,13 @@ pipeline {
 	stage('Auth-Project') {
 	 steps {
 		 dir('google-compute-engine')
-		 {
+		 
         sh 'ls -ltr'
         sh 'pwd'			 
         sh 'gcloud auth activate-service-account jenkins@mi-uat-lab.iam.gserviceaccount.com --key-file=jenkins.json'
     }
     }
-        }		
+        		
 	
         stage('Create Instance') {
 	 steps {
