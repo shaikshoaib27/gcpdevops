@@ -14,7 +14,7 @@ pipeline {
 		stage('Set creds') {
             steps {
               
-                sh ' + echo $SVC_ACCOUNT_KEY | base64 -d > ./google-compute-engine/jenkins.json'
+                sh 'echo $SVC_ACCOUNT_KEY | base64 -d > ./google-compute-engine/jenkins.json'
 		            sh 'pwd'
 		    sh 'cd google-compute-engine'
                        
@@ -26,16 +26,17 @@ pipeline {
 	 steps {
 		 dir('google-compute-engine')
 		 {
-			 
+       sh 'ls -ltr'
+       sh 'pwd'			 
        sh 'gcloud auth activate-service-account jenkins@mi-uat-lab.iam.gserviceaccount.com --key-file=jenkins.json'
     }
     }
-	}		
+         }		
 	
  	 stage('Create Instance') {
 	 steps {
     
-    sh 'gcloud compute instances create webhost2 --zone=us-central1-a --tags=http-server --metadata-from-file=startup-script=./google-compute-engine/startup-script.sh'
+    sh 'gcloud compute instances create webhost2 --zone=us-central1-a --tags=http-server --metadata=startup-script=startup-script.sh'
 		 
     }
     }	 
