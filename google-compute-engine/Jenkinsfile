@@ -31,14 +31,14 @@ pipeline {
        sh 'gcloud auth activate-service-account jenkins@mi-uat-lab.iam.gserviceaccount.com --key-file=jenkins.json'
     }
     }
-         }		
+       }		
 	
- 	 stage('Create Instance') {
-	 steps {
+       stage('Create Instance') {
+	steps {
     
-    sh 'gcloud compute instances create webhost2 --zone=us-central1-a --tags=http-server --metadata=startup-script=startup-script.sh'
+   sh 'gcloud compute instances create webhost2 --zone=us-central1-a --tags=http-server --metadata=startup-script=startup-script.sh'
 		 
-    }
-    }	 
+   }
+   }	 
 }
 }
