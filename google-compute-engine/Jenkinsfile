@@ -37,6 +37,7 @@ pipeline {
 	 steps {
     
     sh 'gcloud compute instances create pipeline-vm --zone=us-central1-a --machine-type-n1-standard-1 --tags=http-server --metadata=startup-script=startup-script.sh'
+  
     }		 	
     }
 }
