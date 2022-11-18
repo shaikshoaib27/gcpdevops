@@ -36,7 +36,7 @@ pipeline {
 	stage('Create Instance') {
 	 steps {
     
-    sh 'gcloud compute instances create pipeline-vm --project=mi-uat-lab --zone=us-central1-a --machine-type=n1-standard-1 --network-interface=network-tier=PREMIUM,subnet=default --tags=http-server ,image=projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20221018 --metadata-startup-script=startup-script.sh'
+    sh 'gcloud compute instances create pipeline-vm --project=mi-uat-lab --zone=us-central1-a --machine-type=n1-standard-1 --network-interface=network-tier=PREMIUM,subnet=default --tags=http-server --image=projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20221018 --metadata=startup-script.sh'
 
     }
 }
