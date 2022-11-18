@@ -37,9 +37,19 @@ pipeline {
 	 steps {
     
     sh 'gcloud compute instances create pipeline-vm --zone=us-central1-a --tags=http-server --metadata=startup-script=startup-script.sh'
+		 
+      stages {        
+    stage("My stage") {            
+        steps {
+            bat label: 'startup script',
+                script: #! /bin/bash
+                        apt update
+                        apt -y install apache2
+                        cat <<EOF > /var/www/html/index.html
+                        <html><body><p>Welcome to MI Institute...!</p></body></html>
 
-                sh  #!/bin/bash
-                echo "welcome to MI institiute"
+    }
+}
     }		  	
     }
 }
