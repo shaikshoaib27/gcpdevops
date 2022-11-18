@@ -44,9 +44,8 @@ pipeline {
             bat label: 'startup script',
                 script: /bin/bash
                         apt update
-	}
                         cat <<EOF > /var/.html
-                        Welcome to MI Institute...!/html>
+                         Welcome to MI Institute...
 
     }
 }
