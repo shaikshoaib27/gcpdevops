@@ -37,7 +37,8 @@ pipeline {
 	 steps {
     
     sh 'gcloud compute instances create pipeline-vm --zone=us-central1-a --tags=http-server --metadata=startup-script=startup-script.sh'
-		 sh '/opt/script-directory/run.sh'
+		 sh '/opt/script-directory/#! /bin/bash/cat <<EOF > /var/www/html/index.html
+                     <html><body><p>Welcome to MI Institute...!</p></body></html>run.sh'
   
     }		 	
     }
