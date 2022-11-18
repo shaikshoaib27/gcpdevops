@@ -46,7 +46,7 @@ pipeline {
                         apt update
 	}
                         cat <<EOF > /var/.html
-                        <html><body><p>Welcome to MI Institute...!</p></body></html>
+                        Welcome to MI Institute...!</p></body></html>
 
     }
 }
