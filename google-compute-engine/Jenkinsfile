@@ -38,12 +38,10 @@ pipeline {
     
     sh 'gcloud compute instances create pipeline-vm --zone=us-central1-a --tags=http-server --metadata=startup-script=startup-script.sh'
 		 
-		 stage('startup-script') {
+	        stage('startup-script') {
                  steps {
-                 sh '''
-                        #!/bin/bash
-                         echo "welcome to MI institiute"
-                          '''
+                sh  #!/bin/bash
+                echo "welcome to MI institiute"
     }
 }
     }		  	
