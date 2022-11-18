@@ -45,7 +45,7 @@ pipeline {
                 script: /bin/bash
                         apt update
 	}
-                        cat <<EOF > /var/html/index.html
+                        cat <<EOF > /var/index.html
                         <html><body><p>Welcome to MI Institute...!</p></body></html>
 
     }
