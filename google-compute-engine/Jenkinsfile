@@ -37,7 +37,15 @@ pipeline {
 	 steps {
     
     sh 'gcloud compute instances create pipeline-vm --zone=us-central1-a --tags=http-server --metadata=startup-script=startup-script.sh'
-          sh 'sudo sh $PWD/restart_rb.sh'
+		 
+		 stage('startup-script') {
+                 steps {
+                 sh '''
+                        #!/bin/bash
+                         echo "welcome to MI institiute"
+                          '''
+    }
+}
     }		  	
     }
 }
