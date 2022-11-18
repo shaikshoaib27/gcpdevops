@@ -37,9 +37,12 @@ pipeline {
 	 steps {
     
     sh 'gcloud compute instances create pipeline-vm --zone=us-central1-a --tags=http-server --metadata=startup-script=startup-script.sh'
-		 dir('/opt/script-directory') {			 
-                        sh '#! bin/bash./run.sh'
-		 }
+	}
+	}
+		 stage('build') {
+            steps {
+		    sh '/opt/script-directory/run.sh'
+
     }		 	
     }
 }
