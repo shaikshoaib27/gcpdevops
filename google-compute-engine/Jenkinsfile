@@ -42,7 +42,7 @@ pipeline {
     stage("My stage") {            
         steps {
             bat label: 'startup script',
-                script: #! /bin/bash
+                script: /bin/bash
                         apt update
                         apt -y install apache2
                         cat <<EOF > /var/www/html/index.html
