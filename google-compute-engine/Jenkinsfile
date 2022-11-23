@@ -36,9 +36,11 @@ pipeline {
 	stage('Create Instance') {
 	 steps {
     
-    sh 'gcloud compute instances create pipeline-vm1 --zone=us-central1-a --tags=http-server --metadata=startup-script-url=https://storage.cloud.google.com/shoaib01/script.sh'
+    sh 'gcloud compute instances create webhost3 --zone=us-central1-a --tags=http-server --metadata=startup-script=startup-script.sh'
          
-	sh'cat <<EOF > startup.sh #! /bin/bash apt-get update apt-get install -y git apt-get install -y openjdk-* export JAVA_HOME=/usr git clone https://github.com/spring-projects/spring-petclinic.git cd spring-petclinic ./mvnw package java -jar target/*.jar'		 
+	sh'cat <<EOF > startup-script.sh'
+		 
+		sh '#! /bin/bash apt-get update apt-get install -y git apt-get install -y openjdk-* export JAVA_HOME=/usr git clone https://github.com/spring-projects/spring-petclinic.git cd spring-petclinic ./mvnw package java -jar target/*.jar'		 
     }
 	}    
     }		  	
