@@ -40,7 +40,7 @@ pipeline {
 		 
 	 sh'#! /bin/bash'
          sh'cat <<EOF > /var/www/html/index.html <html><body><p>Welcome to MI Institute...!</p></body></html>'  
-   
+         sh'pwd'
     }
     }	    
     }
