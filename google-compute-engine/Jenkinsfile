@@ -36,11 +36,7 @@ pipeline {
 	stage('Create Instance') {
 	 steps {
     
-    sh 'gcloud compute instances create webhost1 --zone=us-central1-a --tags=http-server --metadata=startup-script=startup-script.sh'
-		 
-         sh 'pwd'
-	 sh'cat <<EOF > #! /bin/bash/var/www/html/index.html <html><body><p>Welcome to MI Institute...!</p></body></html>'
-		 echo'Welcome to MI Institute...!'
+    sh 'gcloud compute instances create webhost1 --zone=us-central1-a --tags=http-server --metadata-from-file startup-script=startup-script.sh'
 		   
     }
 	}    
