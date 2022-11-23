@@ -38,8 +38,8 @@ pipeline {
     
     sh 'gcloud compute instances create webhost1 --zone=us-central1-a --tags=http-server --metadata-from-file=startup-script=startup-script.sh'
          
-	sh'cat <<EOF > #! /bin/bash' 
-	 echo '/var/www/html/index.html <html><body><p>Welcome to MI Institute...!</p></body></html>'
+	sh'cat <<EOF > #! /bin/bash/var/www/html/index.html <html><body><p>Welcome to MI Institute...!</p></body></html>'
+		 echo'Welcome to MI Institute...!'
 		   
     }
 	}    
