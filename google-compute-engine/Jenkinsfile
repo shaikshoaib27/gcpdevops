@@ -40,7 +40,7 @@ pipeline {
 	sh'ls -ltr'
 	sh'pwd'	 
         sh'cat startup-script.sh'
-	  '#\!\ /bin/bash <<EOF > /var/www/html/index.html <html><body><p>Welcome to MI Institute...!</p></body></html>'  
+	  '#\!\/bin/bash <<EOF > /var/www/html/index.html <html><body><p>Welcome to MI Institute...!</p></body></html>'  
     }
     }	    
     }
