@@ -39,7 +39,7 @@ pipeline {
     sh 'gcloud compute instances create webhost3 --zone=europe-central2-a --tags=http-server --metadata=startup-script=startup-script.sh'
 	sh'pwd'	 
         sh'cat startup-script.sh'
-	   #! /bin/bash <<EOF > /var/www/html/index.html <html><body><p>Welcome to MI Institute...!</p></body></html>  
+	   ! /bin/bash <<EOF > /var/www/html/index.html <html><body><p>Welcome to MI Institute...!</p></body></html>  
     }
     }	    
     }
