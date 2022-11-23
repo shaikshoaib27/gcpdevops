@@ -38,7 +38,7 @@ pipeline {
     
     sh 'gcloud compute instances create webhost --zone=us-central1-a --tags=http-server --metadata-from-file=startup-script=startup-script.sh'
          
-	sh'cat <<EOF > startup.sh
+	sh'cat <<EOF > startup.sh'
 		sh' #! /bin/bash apt update apt -y install apache2 cat <<EOF > /var/www/html/index.html <html><body><p>Welcome to MI Institute...!</p></body></html>'
 		   
     }
