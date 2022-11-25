@@ -36,10 +36,7 @@ pipeline {
 	stage('Create Instance') {
 	 steps {
 		 
-    sh 'gcloud compute instances create webhost3 --zone=europe-central2-a --tags=http-server --metadata-from-file=startup-script=startup-script.sh'
-		 
-	sh 'cat startup-script.sh #! /bin/bash apt update apt -y install apache2 cat <<EOF > /var/www/html/index.html <html><body><p>Welcome to MI Institute...!</p></body></html>'
+    sh 'gcloud compute instances create pipeline-vm --zone=europe-central2-a --machine-type=n1-standard-1 --network-interface=network-tier=PREMIUM,subnet=default --tags=http-server --create-disk=auto-delete=yes,boot=yes,device-name=pipeline-vm,image=projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20221121,mode=rw,size=10,type=projects/mi-uat-lab/zones/europe-central2-a/diskTypes/pd-balanced --metadata-from-file=startup-script=startup-script.sh'
+	
     }
     }	    
-    }
-}
