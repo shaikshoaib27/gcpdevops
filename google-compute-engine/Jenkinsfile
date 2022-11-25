@@ -36,7 +36,7 @@ pipeline {
 	stage('Create Instance') {
 	 steps {
 		 
-    sh 'gcloud compute instances create pipeline-vm --zone=europe-central2-a --machine-type=n1-standard-1 --network-interface=network-tier=PREMIUM,subnet=default --tags=http-server --create-disk=auto-delete=yes,boot=yes,device-name=pipeline-vm,image=projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20221121,mode=rw,size=10,type=projects/mi-uat-lab/zones/europe-central2-a/diskTypes/pd-balanced --metadata-from-file=startup-script=startup-script.sh'
+    sh 'gcloud compute instances create pipeline-vm --zone=europe-central2-a --machine-type=n1-standard-1 --network-interface=network-tier=PREMIUM,subnet=default --tags=http-server --create-disk=auto-delete=yes,boot=yes,device-name=pipeline-vm,image=projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20221121,mode=rw,size=10,type=projects/mi-uat-lab/zones/europe-central2-a/diskTypes/pd-balanced --metadata=startup-script=startup-script.sh'
 	
     }
     }	    
